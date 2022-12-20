@@ -3,9 +3,9 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from phonenumber_field.modelfields import PhoneNumberField
 
-BUILDING_TYPES = ((True, 'Да'), (False, 'Нет'), (None, "Неизвестно"))
 
 class Flat(models.Model):
+    BUILDING_TYPES = ((True, 'Да'), (False, 'Нет'), (None, "Неизвестно"))
     created_at = models.DateTimeField(
         'Когда создано объявление',
         default=timezone.now,
@@ -55,7 +55,7 @@ class Flat(models.Model):
         null=True)
     likes = models.ManyToManyField(
         User,
-        related_name='flats',
+        related_name='user_likes',
         blank=True,
         verbose_name='Лайк')
 
@@ -80,10 +80,10 @@ class Complaint(models.Model):
 
 class Owner(models.Model):
     name = models.CharField('ФИО владельца', max_length=200, db_index=True)
-    owners_phonenumber = models.CharField('Номер владельца', max_length=20, db_index=True)
-    owner_pure_phone = PhoneNumberField('Нормализованный номер владельца', blank=True, db_index=True)
+    phonenumber = models.CharField('Номер владельца', max_length=20, db_index=True)
+    pure_phone = PhoneNumberField('Нормализованный номер владельца', blank=True, db_index=True)
 
-    owner_flats = models.ManyToManyField(
+    flats = models.ManyToManyField(
         Flat,
         verbose_name='Квартиры в собственности',
         related_name='owners')
