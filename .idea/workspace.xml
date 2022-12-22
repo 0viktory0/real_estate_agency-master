@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7518503c-c45b-4925-85b9-c6f4b68d94ce" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/property/migrations/0004_auto_20221217_1541.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/property/migrations/0005_complaint.py" beforeDir="false" afterPath="$PROJECT_DIR$/property/migrations/0005_complaint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property/migrations/0006_flat_likes.py" beforeDir="false" afterPath="$PROJECT_DIR$/property/migrations/0006_flat_likes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property/migrations/0007_flat_owner_pure_phone.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/property/migrations/0008_owner.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/property/migrations/0009_auto_20221217_2200.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/property/migrations/0010_auto_20221218_2326.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/property/migrations/0011_auto_20221218_2328.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/property/migrations/0012_auto_20221219_1404.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/property/migrations/0009_owner.py" beforeDir="false" afterPath="$PROJECT_DIR$/property/migrations/0009_owner.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/property/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/property/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

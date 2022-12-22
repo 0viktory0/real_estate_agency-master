@@ -5,7 +5,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 
 class Flat(models.Model):
-    BUILDING_TYPES = ((True, 'Да'), (False, 'Нет'), (None, "Неизвестно"))
+    BUILDING_TYPES_CHOICES = ((True, 'Да'), (False, 'Нет'), (None, "Неизвестно"))
 
     created_at = models.DateTimeField(
         'Когда создано объявление',
@@ -92,8 +92,7 @@ class Owner(models.Model):
         Flat,
         verbose_name='Квартиры в собственности',
         related_name='owners',
-        null = True,
-        on_delete = models.SET_NULL,)
+        blank=True,)
 
 
     def __str__(self):
