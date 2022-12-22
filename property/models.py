@@ -7,9 +7,6 @@ from phonenumber_field.modelfields import PhoneNumberField
 class Flat(models.Model):
     BUILDING_TYPES = ((True, 'Да'), (False, 'Нет'), (None, "Неизвестно"))
 
-    owner = models.CharField('ФИО владельца', max_length=200)
-    owners_phonenumber = models.CharField('Номер владельца', max_length=20)
-    owners_pure_phone = PhoneNumberField('Нормализованный номер владельца', blank=True, db_index=True)
     created_at = models.DateTimeField(
         'Когда создано объявление',
         default=timezone.now,
@@ -60,7 +57,7 @@ class Flat(models.Model):
 
     likes = models.ManyToManyField(
         User,
-        related_name='user_likes',
+        related_name='flat_likes',
         blank=True,
         verbose_name='Лайк')
 
@@ -72,7 +69,7 @@ class Complaint(models.Model):
     user = models.ForeignKey(
         User,
         verbose_name='Кто жаловался:',
-        related_name="user_complaints",
+        related_name="complaints",
         null=True,
         on_delete=models.SET_NULL)
     flat = models.ForeignKey(
@@ -94,7 +91,10 @@ class Owner(models.Model):
     flats = models.ManyToManyField(
         Flat,
         verbose_name='Квартиры в собственности',
-        related_name='owners')
+        related_name='owners',
+        null = True,
+        on_delete = models.SET_NULL,)
+
 
     def __str__(self):
         return f'{self.name}, {self.pure_phone}'
